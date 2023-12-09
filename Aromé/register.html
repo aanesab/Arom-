@@ -34,29 +34,35 @@
       </ul>
     </header>
     <main>
-
       <div class="forma_titull">
-        <h2>Join our family </h2>
-       </div>
+        <h2>Join our family</h2>
+      </div>
 
       <div class="forma">
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-  
-        <label for="surname">Surname:</label>
-        <input type="text" id="surname" name="surname" required>
-  
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-  
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <form id="myForm">
+          <label>Name:</label>
+          <input type="text" id="name" name="name" required />
+          <div class="error-message" id="nameError"></div>
 
-        <p style="color: #46506e; font-size: 14px;">Already have an account? <a href="" style="text-decoration: none;">Log in</a></p>
-  
-        <button type="submit">Register</button>
-    </form>
+          <label>Surname:</label>
+          <input type="text" id="surname" name="surname" required />
+          <div class="error-message" id="surnameError"></div>
+
+          <label>Email:</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error-message" id="emailError"></div>
+
+          <label>Password:</label>
+          <input type="password" id="password" name="password" required />
+          <div class="error-message" id="passwordError"></div>
+
+          <p style="color: #46506e; font-size: 14px">
+            Already have an account?
+            <a href="#" style="text-decoration: none">Log in</a>
+          </p>
+
+          <button type="submit" onclick="validateForm()">Register</button>
+        </form>
       </div>
     </main>
     <footer>
@@ -80,7 +86,7 @@
       <div class="footermain">
         <div class="footerleft">
           <p>Numri kontaktues:</p>
-          <p> +383 44 121 232</p>
+          <p>+383 44 121 232</p>
           <p>Email: aroméstore@gmail.com</p>
         </div>
         <div class="footerright">
@@ -92,5 +98,48 @@
         <p>© 2023 Aromé KS. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      let nameRegex = /^[A-Z][a-z]{3,8}$/;
+      let surnameRegex = /^[A-Z][a-z]{3,12}$/;
+      let emailRegex = /[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+      let passwordRegex = /^.{8,20}$/;
+
+      function validateForm() {
+        let nameInput = document.getElementById("name");
+        let nameError = document.getElementById("nameError");
+        let surnameInput = document.getElementById("surname");
+        let surnameError = document.getElementById("surnameError");
+        let emailInput = document.getElementById("email");
+        let emailError = document.getElementById("emailError");
+        let passwordInput = document.getElementById("password");
+        let passwordError = document.getElementById("passwordError");
+
+        nameError.innerText = "";
+        surnameError.innerText = "";
+        emailError.innerText = "";
+        passwordError.innerText = "";
+
+
+        if (!nameRegex.test(nameInput.value)) {
+          nameError.innerText = "invalid name";
+          return;
+        }
+        if (!surnameRegex.test(surnameInput.value)) {
+          surnameError.innerText = "invalid surname";
+          return;
+        }
+        if (!emailRegex.test(emailInput.value)) {
+          emailError.innerText = "invalid email";
+          return;
+        }
+        if (!passwordRegex.test(passwordInput.value)) {
+          passwordError.innerText = "invalid password";
+          return;
+        }
+
+        alert("form submitted succesfully!");
+      }
+    </script>
   </body>
-  
+</html>
