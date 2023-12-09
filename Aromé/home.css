@@ -179,6 +179,19 @@
   color: #fff;
 }
 
+.paragrafi::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/paragrafback.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
 /*Review boxes*/
 
 .review_space {
