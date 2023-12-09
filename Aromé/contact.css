@@ -2,6 +2,10 @@ body {
   background: url('images/pexels-rachel-claire-5490778.jpg') center/cover;
   
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 .kontakt {
   margin: 80px;
 }
@@ -16,11 +20,19 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 label {
   display: block;
   margin-bottom: 8px;
   text-align: left;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 input,
 textarea {
   width: 100%;
@@ -31,6 +43,10 @@ textarea {
   border-radius: 4px;
   text-align: left;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 button {
   background-color: #363a4f;
   color: #fff;
@@ -40,10 +56,18 @@ button {
   cursor: pointer;
   margin-top: 10px;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 button:hover {
   background-color: #e4dfdb;
   color: #363a4f;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 .kontakt_titull {
   display: flex;
   justify-content: center;
@@ -55,4 +79,8 @@ button:hover {
   font-family: "Bodoni Moda", serif;
   font-size: larger;
   margin: 60px 0 20px 0;
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
