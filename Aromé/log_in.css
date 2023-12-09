@@ -1,0 +1,62 @@
+.forma {
+  font-family: Arial, sans-serif;
+  margin: 0 100px 100px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  width: 500px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+}
+
+button {
+  background-color: #363a4f;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e4dfdb;
+  color: #363a4f;
+  
+}
+
+.forma_titull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #363a4f;
+  font-family: "Bodoni Moda", serif;
+  font-size: larger;
+  margin: 60px 0 20px 0;
+}
+
+.error-message {
+  color: red;
+}
