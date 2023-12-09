@@ -88,6 +88,29 @@
   font-weight: bold;
 }
 
+/*Warming card*/
+
+.maincontainer {
+  position: relative;
+  margin: 80px 20px;
+  height: 120px;
+  background: rgba(228, 223, 219, 0.3);
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 3s ease;
+  background: #46506e;
+}
+
+.thecard:hover {
+  transform: rotateX(180deg);
+}
+
 /*Review boxes*/
 
 .review_space {
