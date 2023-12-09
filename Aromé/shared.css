@@ -46,7 +46,7 @@ ul a {
   color: #46506e;
 }
 
-ul li:hover {
+ul a:hover {
   font-weight: bold;
   cursor: pointer;
   color: #ffffff;
