@@ -1,6 +1,6 @@
 .forma {
   font-family: Arial, sans-serif;
-  margin: 100px;
+  margin: 0 100px 100px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,4 +44,14 @@ button:hover {
   background-color: #e4dfdb;
   color: #363a4f;
   
+}
+
+.forma_titull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #363a4f;
+  font-family: "Bodoni Moda", serif;
+  font-size: larger;
+  margin: 60px 0 20px 0;
 }
