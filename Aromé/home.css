@@ -111,6 +111,31 @@
   transform: rotateX(180deg);
 }
 
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #e4dfdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.thefront h3 {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 400;
+  padding-bottom: 20px;
+  font-size: 34px;
+  color: #363a4f;
+}
+
+.thefront p {
+  color: #46506e;
+  font-family: "Montserrat", sans-serif;
+}
+
 /*Review boxes*/
 
 .review_space {
