@@ -10,13 +10,15 @@ form {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 60%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  width: 500px;
+  text-align: center;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 input {
@@ -26,10 +28,11 @@ input {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  text-align: left;
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #363a4f;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -38,5 +41,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #e4dfdb;
+  color: #363a4f;
+  
 }
