@@ -241,15 +241,27 @@
   border-radius: 10px;
 }
 
+.review:hover {
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
 .review h4 {
   padding: 10px 0;
+  color: #363a4f;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.review p {
+  color: #46506e;
+  font-family: 'Lato', sans-serif;
 }
 
 .review_boxes img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
   object-fit: cover;
+  border: 3px solid #cdc8ca;
 }
 
 /*Log in and register shortcut*/
