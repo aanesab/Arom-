@@ -1,0 +1,40 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #363a4f;
+}
+
+ section {
+  background-color: #363a4f;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 400;
+  font-size: 34px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.container p {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.intro, .mission-values, .achievements, .future-vision {
+  background-color: #363a4f;
+  color: #fff;
+  padding: 40px;
+  margin: 20px 0;
+}
