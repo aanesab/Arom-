@@ -53,8 +53,7 @@ ul a:hover {
   border-bottom: solid #fad85d;
 }
 
-
-footer{
+footer {
   background-color: #cdc8ca;
   display: flex;
   flex-direction: column;
@@ -63,37 +62,35 @@ footer{
   font-size: 15px;
   padding-top: 20px;
 }
-.f{
+.f {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   width: 90%;
   color: #46506e;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 200;
 }
-.ff{
+.ff {
   display: flex;
   justify-content: space-between;
   width: 15%;
 }
-.ff img{
+.ff img {
   width: 32px;
   height: 32px;
 }
-.footermain{
+.footermain {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
 }
 
-.fundi{
+.fundi {
   display: flex;
   justify-content: center;
   color: #46506e;
   padding-top: 10px;
   font-size: 14px;
 }
-
-

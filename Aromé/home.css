@@ -34,7 +34,7 @@
   object-fit: cover;
 }
 
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
   color: white;
 }
@@ -253,12 +253,12 @@
 .review h4 {
   padding: 10px 0;
   color: #363a4f;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .review p {
   color: #46506e;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .review_boxes img {
