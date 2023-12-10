@@ -5,18 +5,65 @@
   margin: 20px;
 }
 
+.product-image {
+  border: 4px solid #cdc8ca;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 .product-image img {
-  max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  display: block;
+  height: 450px;
 }
 
 .product-info {
   width: 50%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+ 
+}
+
+.product-info h2 {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 500;
+  font-size: 34px;
+  color: #363a4f;
+  padding: 30px 0;
+}
+
+.product-info p {
+  font-family: "Montserrat", sans-serif;
+  color: #46506e;
+  font-weight: 200;
+  padding-bottom: 20px;
 }
 
 .rating-box {
+  display: flex;
+  flex-direction: column;
   background-color: #f2f2f2;
-  padding: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 0 0;
+  background-color:#fbe183;
+  border-radius: 5px;
+}
+
+.rating-box p {
+  font-size: 18px;
+}
+
+.more_information {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.more_information a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #46506e;
 }
