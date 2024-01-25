@@ -17,7 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="CSS/shared.css" />
-    <link rel="stylesheet" href="CSS/log_in.css" />
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
     <header>
@@ -25,40 +25,36 @@
         <img src="images/logo.png" alt="Logo" />
         <div class="aromé">
           <p>
-            <a href="home.html" style="text-decoration: none; color: #363a4f"
+            <a href="home.php" style="text-decoration: none; color: #363a4f"
               >aromé</a
             >
           </p>
         </div>
       </div>
       <ul>
-        <li><a href="items.html">Products</a></li>
-        <li><a href="about_us.html">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="register.html">Join us</a></li>
+        <li><a href="items.php">Products</a></li>
+        <li><a href="about_us.php">About us</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="register.php">Join us</a></li>
       </ul>
     </header>
     <main>
-      <div class="forma_titull">
-        <h2>Log back in</h2>
+      <div class="kontakt_titull">
+        <h2>Don't be shy. Leave us a message and we'll get back to you</h2>
       </div>
 
-      <div class="forma">
-        <form id="myForm">
-          <label>Username:</label>
-          <input type="text" id="username" name="username" required />
-          <div class="error-message" id="usernameError"></div>
+      <div class="kontakt">
+        <form class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-          <label>Password:</label>
-          <input type="password" id="password" name="password" required />
-          <div class="error-message" id="passwordError"></div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-          <p style="color: #46506e; font-size: 14px">
-            Don't have an account?
-            <a href="register.html" style="text-decoration: none">Register</a>
-          </p>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
 
-          <button type="submit" onclick="validateForm()">Login</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </main>
@@ -95,31 +91,5 @@
         <p>© 2023 Aromé KS. All rights reserved.</p>
       </div>
     </footer>
-
-    <script>
-      let usernameRegex = /^[A-Za-z][a-z]{2,12}$/;
-      let passwordRegex = /^.{8,20}$/;
-
-      function validateForm() {
-        let usernameInput = document.getElementById("username");
-        let usernameError = document.getElementById("usernameError");
-        let passwordInput = document.getElementById("password");
-        let passwordError = document.getElementById("passwordError");
-
-        usernameError.innerText = "";
-        passwordError.innerText = "";
-
-        if (!usernameRegex.test(usernameInput.value)) {
-          usernameError.innerText = "invalid username";
-          return;
-        }
-        if (!passwordRegex.test(passwordInput.value)) {
-          passwordError.innerText = "invalid password";
-          return;
-        }
-
-        alert("form submitted succesfully!");
-      }
-    </script>
   </body>
 </html>

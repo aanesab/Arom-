@@ -17,7 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="CSS/shared.css" />
-    <link rel="stylesheet" href="CSS/register.css" />
+    <link rel="stylesheet" href="CSS/log_in.css" />
   </head>
   <body>
     <header>
@@ -25,48 +25,40 @@
         <img src="images/logo.png" alt="Logo" />
         <div class="aromé">
           <p>
-            <a href="home.html" style="text-decoration: none; color: #363a4f"
+            <a href="home.php" style="text-decoration: none; color: #363a4f"
               >aromé</a
             >
           </p>
         </div>
       </div>
       <ul>
-        <li><a href="items.html">Products</a></li>
-        <li><a href="about_us.html">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="">Join us</a></li>
+        <li><a href="items.php">Products</a></li>
+        <li><a href="about_us.php">About us</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="register.php">Join us</a></li>
       </ul>
     </header>
     <main>
       <div class="forma_titull">
-        <h2>Join our family</h2>
+        <h2>Log back in</h2>
       </div>
 
       <div class="forma">
         <form id="myForm">
-          <label>Name:</label>
-          <input type="text" id="name" name="name" required />
-          <div class="error-message" id="nameError"></div>
-
-          <label>Surname:</label>
-          <input type="text" id="surname" name="surname" required />
-          <div class="error-message" id="surnameError"></div>
-
-          <label>Email:</label>
-          <input type="email" id="email" name="email" required />
-          <div class="error-message" id="emailError"></div>
+          <label>Username:</label>
+          <input type="text" id="username" name="username" required />
+          <div class="error-message" id="usernameError"></div>
 
           <label>Password:</label>
           <input type="password" id="password" name="password" required />
           <div class="error-message" id="passwordError"></div>
 
           <p style="color: #46506e; font-size: 14px">
-            Already have an account?
-            <a href="log_in.html" style="text-decoration: none">Log in</a>
+            Don't have an account?
+            <a href="register.php" style="text-decoration: none">Register</a>
           </p>
 
-          <button type="submit" onclick="validateForm()">Register</button>
+          <button type="submit" onclick="validateForm()">Login</button>
         </form>
       </div>
     </main>
@@ -105,36 +97,20 @@
     </footer>
 
     <script>
-      let nameRegex = /^[A-Z][a-z]{3,8}$/;
-      let surnameRegex = /^[A-Z][a-z]{3,12}$/;
-      let emailRegex = /[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+      let usernameRegex = /^[A-Za-z][a-z]{2,12}$/;
       let passwordRegex = /^.{8,20}$/;
 
       function validateForm() {
-        let nameInput = document.getElementById("name");
-        let nameError = document.getElementById("nameError");
-        let surnameInput = document.getElementById("surname");
-        let surnameError = document.getElementById("surnameError");
-        let emailInput = document.getElementById("email");
-        let emailError = document.getElementById("emailError");
+        let usernameInput = document.getElementById("username");
+        let usernameError = document.getElementById("usernameError");
         let passwordInput = document.getElementById("password");
         let passwordError = document.getElementById("passwordError");
 
-        nameError.innerText = "";
-        surnameError.innerText = "";
-        emailError.innerText = "";
+        usernameError.innerText = "";
         passwordError.innerText = "";
 
-        if (!nameRegex.test(nameInput.value)) {
-          nameError.innerText = "invalid name";
-          return;
-        }
-        if (!surnameRegex.test(surnameInput.value)) {
-          surnameError.innerText = "invalid surname";
-          return;
-        }
-        if (!emailRegex.test(emailInput.value)) {
-          emailError.innerText = "invalid email";
+        if (!usernameRegex.test(usernameInput.value)) {
+          usernameError.innerText = "invalid username";
           return;
         }
         if (!passwordRegex.test(passwordInput.value)) {

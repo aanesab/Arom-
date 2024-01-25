@@ -26,17 +26,17 @@
         <img src="images/logo.png" alt="Logo" />
         <div class="aromé">
           <p>
-            <a href="home.html" style="text-decoration: none; color: #363a4f"
+            <a href="home.php" style="text-decoration: none; color: #363a4f"
               >aromé</a
             >
           </p>
         </div>
       </div>
       <ul>
-        <li><a href="items.html">Products</a></li>
-        <li><a href="about_us.html">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="register.html">Join us</a></li>
+        <li><a href="items.php">Products</a></li>
+        <li><a href="about_us.php">About us</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="register.php">Join us</a></li>
       </ul>
     </header>
     <main>
@@ -49,7 +49,7 @@
           <h3>N°3 <br> Vanilla Bahiana</h3>
           <p>Pure perfume essence  <br> 16ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -61,7 +61,7 @@
           <h3>Luna <br> Coconut Nectar</h3>
           <p>Fragrance mist <br> 100ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -73,7 +73,7 @@
           <h3>Luna <br> Amberwood</h3>
           <p>Perfume essence <br> 15ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -82,7 +82,7 @@
           <h3>Luna <br> Lemon Verbena</h3>
           <p>Fragrance enhancing cream <br> 30ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -94,7 +94,7 @@
           <h3>Luna <br> Sour Cherry</h3>
           <p>Fragrance enhancing cream <br> 80ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -104,7 +104,7 @@
           <h3>Luna <br> Pomegranate</h3>
           <p>Fragrance enhancing cream <br> 350ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -113,7 +113,7 @@
           <h3>Luna <br> Iris Palida</h3>
           <p>Fragrance body butter <br> 125g</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -123,7 +123,7 @@
           <h3>Ophélie <br> Winterberry</h3>
           <p>Solid perfume <br> 6.3g </p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -134,7 +134,7 @@
           <h3>N°3 <br> Coffee Blossom </h3>
           <p>Scented candle <br> 250g</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -143,7 +143,7 @@
           <h3>N°3 <br> Tonka Bean</h3>
           <p>Scented candle <br> 200g</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -152,7 +152,7 @@
           <h3>Ophélie <br> Eternal Youth</h3>
           <p>Discovery set <br> 3 x 5ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
 
@@ -161,7 +161,7 @@
           <h3>Ophélie <br> Royale Incense</h3>
           <p>Discovery set <br> 6 x 8ml</p>
           <button class="view-button">
-            <a href="product.html">View Product</a>
+            <a href="product.php">View Product</a>
           </button>
         </div>
       </div>
