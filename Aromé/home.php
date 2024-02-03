@@ -29,10 +29,11 @@
         </div>
       </div>
       <ul>
-        <li><a href="items.php">Products</a></li>
-        <li><a href="about_us.php">About us</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><a href="register.php">Join us</a></li>
+      <li style="padding-right: 10px;"><a href="items.php">Products</a></li>
+        <li style="padding-right: 10px;"><a href="about_us.php">About us</a></li>
+        <li style="padding-right: 10px;"><a href="contact.php">Contact</a></li>
+        <li style="padding-right: 10px;"><a href="register.php">Join</a></li>
+        <li style="padding-right: 5px;"><a href="log_out.php">Log out</a></li>
       </ul>
     </header>
     <main>
