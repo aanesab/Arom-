@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aromé</title>
+    <title>AromÃ©</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
       <div class="headeri">
         <img src="images/logo.png" alt="Logo" />
-        <div class="aromé">
+        <div class="aromÃ©">
           <p>
             <a href="home.php" style="text-decoration: none; color: #363a4f"
               >aromé</a>
@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="footerleft">
           <p>Numri kontaktues:</p>
           <p>+383 44 121 232</p>
-          <p>Email: aroméstore@gmail.com</p>
+          <p>Email: aromÃ©store@gmail.com</p>
         </div>
         <div class="footerright">
           <p>Terms of use licensed</p>
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
       <div class="fundi">
-        <p>© 2023 Aromé KS. All rights reserved.</p>
+        <p>Â© 2023 AromÃ© KS. All rights reserved.</p>
       </div>
     </footer>
 
