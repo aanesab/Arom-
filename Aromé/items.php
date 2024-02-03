@@ -1,3 +1,33 @@
+<?php
+require('db.php');
+
+class GetProduct
+{
+    private $con;
+
+    public function __construct($con)
+    {
+        $this->con = $con;
+    }
+
+    public function getProducts()
+    {
+        $query = "SELECT * FROM products";
+        $result = $this->con->query($query);
+
+        return $result;
+    }
+
+    public function closeConnection()
+    {
+        $this->con->close();
+    }
+}
+
+$gettingProducts = new GetProduct($con);
+$productsResult = $gettingProducts->getProducts();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,132 +70,28 @@
       </ul>
     </header>
     <main>
-      <div class="product-container">
-        <div class="product-box">
-          <img
-            src="images/perfumed_oil.png"
-            alt="N°3- Vanilla pure perfume essence"
-          />
-          <h3>N°3 <br> Vanilla Bahiana</h3>
-          <p>Pure perfume essence  <br> 16ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
+    <div class="product-container">
 
-        <div class="product-box">
-          <img
-            src="images/perfume_spray.png"
-            alt="Luna - Coconut fragrance mist"
-          />
-          <h3>Luna <br> Coconut Nectar</h3>
-          <p>Fragrance mist <br> 100ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img
-            src="images/perfumed_oilw_dropper.png"
-            alt="Luna - Amber perfume essence"
-          />
-          <h3>Luna <br> Amberwood</h3>
-          <p>Perfume essence <br> 15ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/small_tube.png" alt="Luna - Vetiver fragrance enhancing cream" />
-          <h3>Luna <br> Lemon Verbena</h3>
-          <p>Fragrance enhancing cream <br> 30ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img
-            src="images/big_tube.png"
-            alt="Luna - Sour cherry fragrance enhancing cream"
-          />
-          <h3>Luna <br> Sour Cherry</h3>
-          <p>Fragrance enhancing cream <br> 80ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/body_lotion.png" 
-          alt="Luna - Pomegranate fragrance enhancing cream" />
-          <h3>Luna <br> Pomegranate</h3>
-          <p>Fragrance enhancing cream <br> 350ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/body_butter.png" alt="Luna - Iris Palida fragrance body butter" />
-          <h3>Luna <br> Iris Palida</h3>
-          <p>Fragrance body butter <br> 125g</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
+        <?php
         
-        <div class="product-box">
-          <img src="images/small_bodybutter.png" alt="Ophélie - Winterberry solid perfume" />
-          <h3>Ophélie <br> Winterberry</h3>
-          <p>Solid perfume <br> 6.3g </p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
+        while ($row = mysqli_fetch_assoc($productsResult)) {
+            ?>
+            <div class="product-box">
+                <img src="images/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" />
+                <h3><?php echo $row['name']; ?></h3>
+                <p><?php echo $row['description']; ?></p>
+               
+                <button class="view-button">
+                <a href="product.php?id=<?php echo $row['id']; ?>">View Product</a>
+                </button>
 
-        
+            </div>
+            <?php
+        }
+        ?>
 
-        <div class="product-box">
-          <img src="images/candle.png" alt="N°3 - Coffee Blossom scented candle" />
-          <h3>N°3 <br> Coffee Blossom </h3>
-          <p>Scented candle <br> 250g</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/candle_lid.png" alt="N°3 - Tonka Bean scented candle" />
-          <h3>N°3 <br> Tonka Bean</h3>
-          <p>Scented candle <br> 200g</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/samplebox_small.png" alt="Ophélie - Eternal Youth discovery set" />
-          <h3>Ophélie <br> Eternal Youth</h3>
-          <p>Discovery set <br> 3 x 5ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-
-        <div class="product-box">
-          <img src="images/samplebox_big.png" alt="Ophélie - Royale discovery set" />
-          <h3>Ophélie <br> Royale Incense</h3>
-          <p>Discovery set <br> 6 x 8ml</p>
-          <button class="view-button">
-            <a href="product.php">View Product</a>
-          </button>
-        </div>
-      </div>
-    </main>
+    </div>
+</main>
     <footer>
       <div class="f">
         <h3>Get in touch</h3>

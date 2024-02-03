@@ -1,3 +1,43 @@
+<?php
+require('db.php');
+
+class GetProduct
+{
+    private $con;
+
+    public function __construct($con)
+    {
+        $this->con = $con;
+    }
+
+    public function getProductById($id)
+    {
+        $query = "SELECT * FROM products WHERE id = $id";
+        $result = $this->con->query($query);
+
+        return $result->fetch_assoc();
+    }
+
+    public function closeConnection()
+    {
+        $this->con->close();
+    }
+}
+
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $gettingProduct = new GetProduct($con);
+    $product = $gettingProduct->getProductById($id);
+    $gettingProduct->closeConnection();
+} else {
+    
+    header("Location: items.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,40 +79,33 @@
       </ul>
     </header>
     <main>
-      <div class="product-page">
+    <div class="product-page">
         <div class="product-image">
-          <img src="images/perfumed_oil.png" alt="Product Image" />
+            <img src="images/<?php echo $product['image']; ?>" alt="Product Image" />
         </div>
 
         <div class="product-info">
-          <h2>N°3 ~ Vanilla Bahiana</h2>
-          <p>
-            Vanilla Bahiana, a timeless allure of warmth, captivates with its
-            sweet and comforting essence. <br><br> Crafted for sensory pleasure,
-            Vanilla Bahiana gracefully weaves its rich notes into a symphony of
-            delight, creating an olfactory experience that transforms moments
-            into an indulgent journey of self-expression. <br><br> A true companion for
-            all seasons, it transcends time, leaving an indelible mark on every
-            wearer's style, blossoming as a fragrant emblem of elegance in the
-            gardens of personal allure.
-          </p>
+            <h2><?php echo $product['name']; ?></h2>
+            <p><?php echo $product['description']; ?></p>
 
-          <div class="rating-box">
-            <p style="font-weight: bold">Rated overall: 4.5 / 5</p>
-            <p style="font-size: 12px">
-              Based on 100+ reviews from our viewers
-            </p>
-          </div>
+           
 
-          <div class="more_information">
-            <p>
-              For other options head on over to our
-              <a href="items.php">Products page</a>
-            </p>
+            <div class="rating-box">
+                <p style="font-weight: bold">Rated overall: 4.5 / 5</p>
+                <p style="font-size: 12px">
+                    Based on reviews from our viewers
+                </p>
+            </div>
+
+            <div class="more_information">
+                <p>
+                    For other options, head on over to our
+                    <a href="items.php">Products page</a>
+                </p>
+            </div>
           </div>
-        </div>
       </div>
-    </main>
+  </main>
     <footer>
       <div class="f">
         <h3>Get in touch</h3>

@@ -1,3 +1,62 @@
+<?php 
+require('db.php');
+
+class UserRegistration {
+  private $con;
+
+  public function __construct($con) {
+      $this->con = $con;
+  }
+
+  public function RegisterUser($name,$surname , $password, $email, $username) {
+
+    if (!preg_match('/^.{8,}$/', $password)) {
+      echo "Password must contain at least 8 characters!";
+      return;
+  }
+
+  if (!preg_match('/^.{4,}$/', $name)) {
+      echo "Username must contain at least 4 characters!";
+      return;
+  }
+
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo "Invalid email address!";
+      return;
+  }
+
+
+  $sql = "INSERT INTO user (name, surname, email, username, password) 
+  VALUES ('$name', '$surname','$email','$username', '$password')";
+
+
+    if ($this->con->query($sql) == TRUE) {
+        echo "You are now a member of our site, have fun!";
+    } else {
+        echo "Oops something happened: " . $this->con->error;
+    }
+}
+
+public function closeConnection() {
+    $this->con->close();
+}
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $_POST["name"];
+$surname = $_POST["surname"];
+$email = $_POST["email"];
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+$userRegister = new UserRegistration($con);
+$userRegister->RegisterUser($name,$surname , $password, $email, $username);
+$userRegister->closeConnection();
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,20 +103,24 @@
       </div>
 
       <div class="forma">
-        <form id="myForm">
-          <label>Name:</label>
+        <form action="register.php" method="post" id="myForm">
+          <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <div class="error-message" id="nameError"></div>
 
-          <label>Surname:</label>
+          <label for="surname">Surname:</label>
           <input type="text" id="surname" name="surname" required />
           <div class="error-message" id="surnameError"></div>
 
-          <label>Email:</label>
+          <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
           <div class="error-message" id="emailError"></div>
 
-          <label>Password:</label>
+          <label for="username">Username:</label>
+          <input type="username" id="username" name="username" required />
+          <div class="error-message" id="usernameError"></div>
+
+          <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
           <div class="error-message" id="passwordError"></div>
 
@@ -108,6 +171,7 @@
       let nameRegex = /^[A-Z][a-z]{3,8}$/;
       let surnameRegex = /^[A-Z][a-z]{3,12}$/;
       let emailRegex = /[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+      let usernameRegex = /^[a-zA-Z0-9_]{4,12}$/;
       let passwordRegex = /^.{8,20}$/;
 
       function validateForm() {
@@ -117,12 +181,14 @@
         let surnameError = document.getElementById("surnameError");
         let emailInput = document.getElementById("email");
         let emailError = document.getElementById("emailError");
+        let usernameError = document.getElementById("usernameError");
         let passwordInput = document.getElementById("password");
         let passwordError = document.getElementById("passwordError");
 
         nameError.innerText = "";
         surnameError.innerText = "";
         emailError.innerText = "";
+        userError.innerText = "";
         passwordError.innerText = "";
 
         if (!nameRegex.test(nameInput.value)) {
@@ -135,6 +201,10 @@
         }
         if (!emailRegex.test(emailInput.value)) {
           emailError.innerText = "invalid email";
+          return;
+        }
+        if (!userRegex.test(userInput.value)) {
+          userError.innerText = "invalid user";
           return;
         }
         if (!passwordRegex.test(passwordInput.value)) {
