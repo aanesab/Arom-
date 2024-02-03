@@ -93,7 +93,7 @@ if (isset($_GET['id'])) {
             <div class="rating-box">
                 <p style="font-weight: bold">Rated overall: 4.5 / 5</p>
                 <p style="font-size: 12px">
-                    Based on reviews from our viewers
+                    Soon available for preorder!
                 </p>
             </div>
 

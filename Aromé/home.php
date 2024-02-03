@@ -82,7 +82,7 @@
           <h3>N°3 <br> Vanilla Bahiana</h3>
           <p>Pure perfume essence  <br> 16ml</p>
           <button class="view-button">
-            <a href="product.php">View Product</a>
+            <a href="product.php">View Products</a>
           </button>
         </div>
 
@@ -94,7 +94,7 @@
           <h3>Luna <br> Coconut Nectar</h3>
           <p>Fragrance mist <br> 100ml</p>
           <button class="view-button">
-            <a href="product.php">View Product</a>
+            <a href="product.php">View Products</a>
           </button>
         </div>
 
@@ -106,7 +106,7 @@
           <h3>Luna <br> Sour Cherry</h3>
           <p>Fragrance enhancing cream <br> 80ml</p>
           <button class="view-button">
-            <a href="product.php">View Product</a>
+            <a href="product.php">View Products</a>
           </button>
         </div>
 
@@ -115,7 +115,7 @@
           <h3>Luna <br> Iris Palida</h3>
           <p>Fragrance body butter <br> 125g</p>
           <button class="view-button">
-            <a href="product.php">View Product</a>
+            <a href="product.php">View Products</a>
           </button>
         </div>
       </div>

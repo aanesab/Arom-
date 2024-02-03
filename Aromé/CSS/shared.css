@@ -1,6 +1,7 @@
 * {
   margin: 0;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -31,14 +32,15 @@ header {
 }
 
 ul {
-  width: 30%;
+  width: 100%;
   display: flex;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   align-items: center;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 16px;
+  flex-wrap: wrap; 
 }
 
 ul a {
@@ -62,6 +64,7 @@ footer {
   font-size: 15px;
   padding-top: 20px;
 }
+
 .f {
   display: flex;
   justify-content: space-between;
@@ -70,21 +73,26 @@ footer {
   color: #46506e;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
+  flex-wrap: wrap; 
 }
+
 .ff {
   display: flex;
   justify-content: space-between;
-  width: 15%;
+  width: auto; 
+  gap: 8px; 
 }
 .ff img {
   width: 32px;
   height: 32px;
 }
+
 .footermain {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  flex-wrap: wrap;
 }
 
 .fundi {
