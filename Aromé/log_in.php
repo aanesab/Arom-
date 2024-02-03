@@ -1,3 +1,65 @@
+<?php
+session_start();
+require('db.php');
+
+class UserLogin {
+    private $con;
+
+    public function __construct($con) {
+        $this->con = $con;
+    }
+
+    public function loginUser($email, $password) {
+       
+        if (strpos($email, '@arome.com') !== false) {
+            $this->redirectUserToDashboard();
+            return;
+        }
+
+        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
+        $result = $this->con->query($sql);
+
+        if ($result->num_rows > 0) {
+          
+          $userData = $result->fetch_assoc();
+          
+          
+
+          
+          setcookie("name", $userData['name'], time() + (86400 * 30), "/");
+          setcookie("surname", $userData['surname'], time() + (86400 * 30), "/");
+          setcookie("email", $userData['email'], time() + (86400 * 30), "/");
+
+          echo "Login successful!";
+      } else {
+          echo "Invalid credentials. Please check your email and password.";
+      }
+  }
+
+
+    private function redirectUserToDashboard() {
+        header("Location: dashboard.php");
+        exit();
+    }
+
+    public function closeConnection() {
+        $this->con->close();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $userLogin = new UserLogin($con);
+    $userLogin->loginUser($email, $password);
+    $userLogin->closeConnection();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,8 +88,7 @@
         <div class="aromé">
           <p>
             <a href="home.php" style="text-decoration: none; color: #363a4f"
-              >aromé</a
-            >
+              >aromé</a>
           </p>
         </div>
       </div>
@@ -44,10 +105,14 @@
       </div>
 
       <div class="forma">
-        <form id="myForm">
+        <form action="log_in.php" method="post" id="myForm">
           <label>Username:</label>
           <input type="text" id="username" name="username" required />
           <div class="error-message" id="usernameError"></div>
+
+          <label>Email:</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error-message" id="emailError"></div>
 
           <label>Password:</label>
           <input type="password" id="password" name="password" required />
@@ -96,21 +161,29 @@
       </div>
     </footer>
 
-    <script>
+      <script>
       let usernameRegex = /^[A-Za-z][a-z]{2,12}$/;
+      let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       let passwordRegex = /^.{8,20}$/;
 
       function validateForm() {
         let usernameInput = document.getElementById("username");
         let usernameError = document.getElementById("usernameError");
+        let emailInput = document.getElementById("email");
+        let emailError = document.getElementById("emailError");
         let passwordInput = document.getElementById("password");
         let passwordError = document.getElementById("passwordError");
 
         usernameError.innerText = "";
+        emailError.innerText = "";
         passwordError.innerText = "";
 
         if (!usernameRegex.test(usernameInput.value)) {
           usernameError.innerText = "invalid username";
+          return;
+        }
+        if (!emailRegex.test(emailInput.value)) {
+          emailError.innerText = "invalid email";
           return;
         }
         if (!passwordRegex.test(passwordInput.value)) {
